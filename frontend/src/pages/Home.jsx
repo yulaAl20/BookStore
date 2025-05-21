@@ -4,7 +4,7 @@
     import { Link } from "react-router-dom";
     import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
     import { BsInfoCircle } from "react-icons/bs";
-    import { MdOutlineAddBox } from "react-icons/md";
+    import { MdOutlineAddBox , MdOutlineDelete } from "react-icons/md";
 
     const Home = () => {
     const [books, setBooks] = useState([]);
@@ -14,7 +14,7 @@
         setLoading(true);
         axios.get("http://localhost:5555/books")
         .then((response) => {
-            setBooks(response.data.books);
+            setBooks(response.data.data);
             setLoading(false);
         })
         .catch((error) => {
@@ -27,7 +27,7 @@
         <div className="container mx-auto">
         <h1 className="text-3xl font-bold text-center mt-10">Welcome to the Book Store</h1>
         <p className="text-center mt-5">Explore our collection of books and find your next read!</p>
-
+        <h2 className="text-2xl font-bold mt-10">Books List</h2>
         <div className="flex justify-end mt-5">
             <Link to="/books/create" className="flex items-center gap-1 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
             <MdOutlineAddBox /> Add Book
@@ -43,7 +43,7 @@
         <tr>
         <th className="border border-slate-600 rounded-md">No</th>
         <th className="border border-slate-600 rounded-md">Title</th>
-        <th className="border border-slate-600 rounded-md">
+        <th className="border border-slate-600 rounded-md max-md:hidden">
             Author
         </th>
         <th className="border border-slate-600 rounded-md max-md:hidden">Publish Year</th>
