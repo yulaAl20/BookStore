@@ -1,0 +1,13 @@
+npm install mongodb
+
+mongodb+srv://<db_username>:<db_password>@cluster0.nrnvugv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+https://v2.tailwindcss.com/docs/guides/vue-3-vite
+
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npx tailwindcss init -p
+
+
+dom
+npm i react-router-dom   
+npm i axios react-icons

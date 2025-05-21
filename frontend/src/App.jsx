@@ -2,20 +2,26 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import ShowBooks from './pages/ShowBooks'
+import EditBook from './pages/EditBook'
+import CreateBook from './pages/CreateBook'
+import DeleteBook from './pages/DeleteBook' 
+
+
 
 function App() {
-  return(<div>
-      <header>
-        <h1>Bookstore</h1>
-      </header>
-      <main>
-        <p>Welcome to the Bookstore App!</p>
-        {/* Future: Add components like BookList, Cart, etc. */}
-      </main>
-      <footer>
-        <small>&copy; 2025 Bookstore Inc.</small>
-      </footer>
-    </div>
+  return(
+  <Routes>
+    <Route path="/" element={<h1>Welcome to My website</h1>} />
+    <Route path="/books" element={<ShowBooks/>} />
+    <Route path="/books/:id" element={<EditBook/>} />
+    <Route path="/books" element={<CreateBook/>} />
+    <Route path="/books/:id" element={<EditBook/>} />
+    <Route path="/books/:id" element={<DeleteBook />} />
+  </Routes>
   );
-}
+};
+
 export default App
